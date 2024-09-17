@@ -37,7 +37,7 @@ int main () {
     weeklyPay = (float)userAnnualPay / weeksInAYear;
 
     //print output
-    printf("Your yearly pay is: %8.2f\n", weeklyPay);
+    printf("Your weekly pay is: %.2f\n", weeklyPay);
 
     return 0;
 }

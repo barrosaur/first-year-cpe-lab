@@ -13,9 +13,9 @@
 
 #include <stdio.h>
 
-#define REGISTRATION_FEE 450
-#define PRICE_PER_UNIT 450
-#define PENALTY 2260
+#define REGISTRATION_FEE 450.00
+#define PRICE_PER_UNIT 450.00
+#define PENALTY 2260.00
 
  /*
 ============================================================================
@@ -38,8 +38,8 @@ int main () {
     scanf("%d", &secondSemUnits);
 
     //COMPUTE first and second semester fee
-    firstSemFee = REGISTRATION_FEE + (PRICE_PER_UNIT * firstSemUnits) + (firstSemUnits * 2260)/12;
-    secondSemFee = REGISTRATION_FEE + (PRICE_PER_UNIT * secondSemUnits) + (secondSemUnits * 2260)/12;
+    firstSemFee = REGISTRATION_FEE + (PRICE_PER_UNIT * firstSemUnits) + (firstSemUnits * 2260)/ (float)12;
+    secondSemFee = REGISTRATION_FEE + (PRICE_PER_UNIT * secondSemUnits) + (secondSemUnits * 2260)/ (float)12;
 
     //COMPUTE sum of first and second semester fees
     sum = firstSemFee + secondSemFee;
