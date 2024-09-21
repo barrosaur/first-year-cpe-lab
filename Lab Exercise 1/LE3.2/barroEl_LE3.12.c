@@ -23,6 +23,7 @@
 ===========================================================================
 */
 int main() {
+
     int num, sum;
     int lastDigit, secondLastDigit;
     
@@ -43,4 +44,5 @@ int main() {
     printf("Sum: %d + %d = %d", secondLastDigit, lastDigit, sum);
 
     return 0;
+    
 }
