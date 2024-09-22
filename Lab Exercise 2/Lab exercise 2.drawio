@@ -8,7 +8,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="B0UeWx64Hhw7liJx4GVb" name="LE4.2">
-    <mxGraphModel dx="1162" dy="1405" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1188" dy="1405" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -54,12 +54,6 @@
         <mxCell id="A3LQe7Sx8gxQqDaveOI7-14" value="discriminant &amp;lt; 0&lt;div&gt;?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-30" width="145" height="80" as="geometry" />
         </mxCell>
-        <mxCell id="A3LQe7Sx8gxQqDaveOI7-15" value="&lt;b&gt;NO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="45" y="-110" width="60" height="30" as="geometry" />
-        </mxCell>
-        <mxCell id="A3LQe7Sx8gxQqDaveOI7-16" value="&lt;b&gt;NO&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="30" y="-30" width="60" height="30" as="geometry" />
-        </mxCell>
         <mxCell id="A3LQe7Sx8gxQqDaveOI7-17" value="&lt;b&gt;YES&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="120" y="10" width="60" height="30" as="geometry" />
         </mxCell>
@@ -72,7 +66,7 @@
         <mxCell id="A3LQe7Sx8gxQqDaveOI7-20" value="COMPUTE root1 = (-b + sqrt(discriminant)) / (2*a)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-100" y="140" width="285" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="A3LQe7Sx8gxQqDaveOI7-21" value="COMPUTE root1 = (-b - sqrt(discriminant)) / (2*a)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+        <mxCell id="A3LQe7Sx8gxQqDaveOI7-21" value="COMPUTE root2 = (-b - sqrt(discriminant)) / (2*a)" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
           <mxGeometry x="-100" y="220" width="285" height="40" as="geometry" />
         </mxCell>
         <mxCell id="A3LQe7Sx8gxQqDaveOI7-22" value="DISPLAY root1, root2" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
