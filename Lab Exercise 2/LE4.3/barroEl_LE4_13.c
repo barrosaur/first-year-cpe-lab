@@ -15,7 +15,7 @@
 /*
 ============================================================================
  FUNCTION    : main
- DESCRIPTION : Checks whether user input is a consonant, vowel, or invalid
+ DESCRIPTION : Computes final grade and checks if Passed or Failed
  ARGUMENTS   : None
  RETURNS     : int
  		       Program successful execution without errors
