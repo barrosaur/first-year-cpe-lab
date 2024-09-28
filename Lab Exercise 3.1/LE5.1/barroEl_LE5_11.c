@@ -7,7 +7,7 @@ int main () {
 
     printf("======================================================\n");
 
-    for (i = 1; i <= 10; i++) {\
+    for (i = 1; i <= 10; i++) {
         printf("Enter integer %d: ", i);
         scanf("%d", &num);
 
