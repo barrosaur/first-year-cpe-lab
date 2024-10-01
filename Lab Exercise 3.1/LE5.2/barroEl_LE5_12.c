@@ -7,7 +7,7 @@ int main() {
     int attempt = 0;
 
     while (attempt < 3) {
-        printf("Enter passcode: ");
+        printf("Enter 6-digit PIN: ");
         scanf("%d", &passcodePrompt);
 
         if (passcodePrompt == CORRECT_PASSCODE) {
@@ -16,7 +16,7 @@ int main() {
         } else {
             attempt++;
             if(attempt < 3) {
-                printf("Invalid Password. Try Again.\n");
+                printf("Invalid password. Try again.\n");
             }
         }
     }

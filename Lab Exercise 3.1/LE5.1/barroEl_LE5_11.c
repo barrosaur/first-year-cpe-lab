@@ -2,7 +2,8 @@
 
 int main () {
     int num, i;
-    int evenCount = 0, sumEven = 0, productOdd = 1;
+    int evenCount = 0, sumEven = 0;
+    int productOdd = 1, oddCount = 0;
     float averageEven;
 
     printf("======================================================\n");
@@ -13,18 +14,27 @@ int main () {
 
         if(num % 2 == 0) {
             evenCount++;
-            sumEven += num;
+            sumEven = sumEven + num;
         } else {
+            oddCount++;
             productOdd *= num;
         }
     }
 
     printf("======================================================\n");
 
-    averageEven = (float) sumEven / (float) evenCount;
+    if(evenCount > 0) {
+        averageEven = (float) sumEven / (float) evenCount;
+        printf("Average of even numbers: %.2f\n", averageEven);
+    } else {
+        printf("There are no even numbers.\n");
+    }
 
-    printf("Average of even numbers: %.2f\n", averageEven);
-    printf("Product of odd numbers: %d\n", productOdd);
+    if(oddCount == 0) {
+        printf("There are no odd numbers.\n");
+    } else {
+        printf("Product of odd numbers: %d\n", productOdd);
+    }
 
     return 0;
 }

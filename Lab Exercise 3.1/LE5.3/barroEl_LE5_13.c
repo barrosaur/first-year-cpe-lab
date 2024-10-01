@@ -7,9 +7,9 @@ void rootsProblemSolver(float a, float b, float c);
 
 int main () {
 
-    int operation;
+    int operation = 0;
 
-    while(1) {
+    while(operation != 4) {
         printf("=====================================================\n");
 
         printf("Operation Menu: \n");
@@ -18,7 +18,15 @@ int main () {
         printf("3. Finding the Roots of quadratic equations\n");
         printf("4. Exit\n");
         printf("Choose an operation: ");
-        scanf("%d", &operation);
+        
+        if(scanf("%d", &operation) != 1) {
+            // If input is not a valid integer
+            printf("Invalid input! Please enter a number.\n");
+
+            // Clear the invalid input from buffer
+            while(getchar() == '\n');  // This clears any extra characters left in input
+            continue; // Ask for the input again
+        }
 
         switch (operation) {
             case 1: {
@@ -58,7 +66,8 @@ int main () {
                 break;
             }
             default:
-                printf("Invalid operation. Please choose again\n");
+                printf("Invalid option! Please enter a number between 1 and 4.\n");
+                break;
         }
     }   
 
