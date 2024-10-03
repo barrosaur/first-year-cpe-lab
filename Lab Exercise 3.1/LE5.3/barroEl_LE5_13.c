@@ -1,9 +1,32 @@
+/*
+============================================================================
+ FILE        : barroEl_LE5_13.c
+ AUTHOR      : Ellaine Joyce Barro
+ DESCRIPTION : Problem solver
+ COPYRIGHT   : created
+ REVISION HISTORY
+ Date:              By: 	                    Description:
+ 10/01/24	        Ellaine Joyce Barro         Made the entire program
+ 10/03/24           Ellaine Joyce Barro         Documentation
+============================================================================
+*/
+
 #include <stdio.h>
 #include <math.h>
 
 float powerProblemSolver(float base, float power);
 int factorialProblemSolver(int x);
 void rootsProblemSolver(float a, float b, float c);
+
+/*
+============================================================================
+ FUNCTION    : main
+ DESCRIPTION : Displays 4 operations on what the user wants to be solved
+ ARGUMENTS   : None
+ RETURNS     : int
+ 		       Program successful execution without errors
+===========================================================================
+*/
 
 int main () {
 
@@ -74,6 +97,15 @@ int main () {
     return 0;
 }
 
+/*
+============================================================================
+ FUNCTION    : powerProblemSolver
+ DESCRIPTION : Computes exponential problems
+ ARGUMENTS   : base, power
+ RETURNS     : float
+ 		       result of exponential computaation
+===========================================================================
+*/
 float powerProblemSolver(float base, float power) {
     int i;
     float result = 1;
@@ -85,6 +117,15 @@ float powerProblemSolver(float base, float power) {
     return result;
 }
 
+/*
+============================================================================
+ FUNCTION    : factorialProblemSovler
+ DESCRIPTION : Computes factorial problems
+ ARGUMENTS   : x
+ RETURNS     : int 
+ 		       result of factorial computaation
+===========================================================================
+*/
 int factorialProblemSolver (int x) {
     int result = 1;
     int i;
@@ -93,6 +134,16 @@ int factorialProblemSolver (int x) {
     }
     return result;
 }
+
+/*
+============================================================================
+ FUNCTION    : rootsProblemSovler
+ DESCRIPTION : Computes factorial problems
+ ARGUMENTS   : a, b, c
+ RETURNS     : void 
+ 		       result of roots computaation
+===========================================================================
+*/
 
 void rootsProblemSolver(float a, float b, float c) {
     float discriminant;
