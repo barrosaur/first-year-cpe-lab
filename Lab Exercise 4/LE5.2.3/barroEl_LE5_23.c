@@ -52,7 +52,7 @@ int main() {
     //start indexing at 3 (1, 1, ...)
     for(i = 3; i<= limit; i++) {
         //COMPUTE nextNum to be the sum of firstNum and secondNum
-        //nextNum = firstNum + secondNum;
+        nextNum = firstNum + secondNum;
         //DISPLAY the next number
         printf("%d ", nextNum);
         //UPDATE firstNum and secondNum for the next iteration
