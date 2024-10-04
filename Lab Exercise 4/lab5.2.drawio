@@ -122,6 +122,9 @@
         <mxCell id="E4Na9KV9of4ap3lqZ3wi-36" value="A" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
           <mxGeometry x="55" y="280" width="40" height="40" as="geometry" />
         </mxCell>
+        <mxCell id="E4Na9KV9of4ap3lqZ3wi-38" value="&lt;blockquote style=&quot;margin: 0 0 0 40px; border: none; padding: 0px;&quot;&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;START&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;1. INITIALIZE I = 1, j = 1, rows = 0, columns = 0&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;2. GET rows, columns&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;white-space: pre;&quot;&gt;&#x9;&lt;/span&gt;3. FOR&lt;br&gt;&lt;/p&gt;&lt;/blockquote&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="90" width="340" height="290" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
