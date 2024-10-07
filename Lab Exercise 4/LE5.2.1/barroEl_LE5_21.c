@@ -1,4 +1,26 @@
+/*
+============================================================================
+ FILE        : barroEl_LE5_21.c
+ AUTHOR      : Ellaine Joyce A. Barro
+ DESCRIPTION : Multiplication table
+ COPYRIGHT   : created
+ REVISION HISTORY
+ Date:               By: 	                        Description:
+ 10/04/24	         Ellaine Joyce A. Barro         Made the entire program
+============================================================================
+*/
+
 #include <stdio.h>
+
+ /*
+============================================================================
+ FUNCTION    : main
+ DESCRIPTION : Displays multiplication from rows and column input
+ ARGUMENTS   : none
+ RETURNS     : int
+ 		       Successful code execution with no errors
+===========================================================================
+*/
 
 int main () {
 
@@ -6,12 +28,14 @@ int main () {
     int rows = 0, columns = 0;
     int validInput, multiply;
 
-    while (rows <= 0) {
+        while (rows <= 0) {
+        
+        //GET rows
         printf("Enter the number of rows: ");
         validInput = scanf("%d", &rows);
 
         if (validInput != 1) {
-            while (getchar() != '\n'); // discard invalid input
+            while (getchar() != '\n'); //discards invalid inputs like letters
             printf("Invalid input. Must be a positive integer.\n");
             rows = 0; // reset rows to loop again
         } else if (rows <= 0) {
@@ -20,10 +44,10 @@ int main () {
     }
 
     while (columns <= 0) {
+        //GET columns
         printf("Enter the number of columns: ");
         validInput = scanf("%d", &columns);
 
-        // Clear the input buffer if scanf fails
         if (validInput != 1) {
             while (getchar() != '\n'); // discard invalid input
             printf("Invalid input. Must be a positive integer.\n");
