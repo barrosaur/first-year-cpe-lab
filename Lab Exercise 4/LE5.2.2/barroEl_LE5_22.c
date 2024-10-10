@@ -26,9 +26,22 @@ int main() {
     int i, j;
     int num;
 
-    //GET num
-    printf("Enter num: ");
-    scanf("%d", &num);
+    do {
+        printf("Enter num: ");
+        
+        //CHECK user input
+        if (scanf("%d", &num) != 1) {
+            //IF invalid input, then display this
+            printf("Invalid input. Please enter a number.\n");
+            // Clear the invalid input from buffer
+            while (getchar() != '\n');  // This clears the leftover characters
+        } else if (num <= 0) {
+            // If the number is less than or equal to 0
+            printf("Please enter a positive number.\n");
+        } else {
+            break;  // If input is valid, exit the loop
+        }
+    } while (1);
 
     //for every row
     for(i = 1; i <= num; i++) {
