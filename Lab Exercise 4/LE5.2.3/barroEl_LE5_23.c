@@ -19,12 +19,12 @@
  ARGUMENTS   : none
  RETURNS     : int
  		       Successful code execution with no errors
-===========================================================================
+============================================================================
 */
 
 int main() {
     //INITIALIZE variables
-    int firstNum = 1, secondNum = 1, nextNum, i;
+    unsigned long long firstNum = 1, secondNum = 1, nextNum, i;
     int limit;
     char charInputCheck;
 
@@ -40,27 +40,26 @@ int main() {
 
     printf("FIBONACCI SEQUENCE\n");
 
-    //if limit is 1 then it should just return 1
-    if(limit == 1) {
+    if (limit == 1) {
+        // If limit is 1, only print the first number
         printf("%d\n", firstNum);
-        return 0;
+    } else {
+        // If limit is greater than 2, print the first two numbers
+        printf("%d %d ", firstNum, secondNum);
+
+        // Continue the Fibonacci sequence from the 3rd number onward
+        for (i = 3; i <= limit; i++) {
+            // Compute the next number in the sequence
+            nextNum = firstNum + secondNum;
+            // Display the next number
+            printf("%llu ", nextNum);
+            // Update firstNum and secondNum for the next iteration
+            firstNum = secondNum;
+            secondNum = nextNum;
+        }
+        printf("\n");
     }
 
-    //if the limit is not 1, then display the first and second number which is 1
-    printf("%d %d ", firstNum, secondNum);
-
-    //start indexing at 3 (1, 1, ...)
-    for(i = 3; i<= limit; i++) {
-        //COMPUTE nextNum to be the sum of firstNum and secondNum
-        nextNum = firstNum + secondNum;
-        //DISPLAY the next number
-        printf("%d ", nextNum);
-        //UPDATE firstNum and secondNum for the next iteration
-        firstNum = secondNum;
-        secondNum = nextNum;
-    }
-
-    printf("\n");
 
     return 0;
 }
