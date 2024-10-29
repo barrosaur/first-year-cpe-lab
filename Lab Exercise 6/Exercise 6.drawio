@@ -232,8 +232,8 @@
         <mxCell id="K1GjOJP1gYvgjTUfEYeX-4" value="GET choice" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
           <mxGeometry x="365" y="210" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="K1GjOJP1gYvgjTUfEYeX-5" value="choice&lt;div&gt;?&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="385" y="260" width="80" height="80" as="geometry" />
+        <mxCell id="K1GjOJP1gYvgjTUfEYeX-6" value="SWITCH&lt;div&gt;choice&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="260" width="120" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
