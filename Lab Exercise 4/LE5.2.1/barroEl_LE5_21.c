@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 
- /*
+/*
 ============================================================================
  FUNCTION    : main
  DESCRIPTION : Displays multiplication from rows and column input
@@ -28,7 +28,7 @@ int main () {
     int rows = 0, columns = 0;
     int validInput, multiply;
 
-        while (rows <= 0) {
+    while (rows <= 0) {
         
         //GET rows
         printf("Enter the number of rows: ");
