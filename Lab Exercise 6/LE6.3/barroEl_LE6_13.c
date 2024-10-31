@@ -19,6 +19,7 @@ int powerSolver(int base, int p);
 int factorialSolver(int num);
 int quadraticSolver(int a, int b, int c);
 
+float root1, root2;
 /*
 ============================================================================
  FUNCTION    : main
@@ -64,7 +65,6 @@ int main() {
             }
             case 3: {
                 int a, b, c;
-                float root1, root2;
                 int result;
 
                 printf("Enter a: ");
@@ -78,18 +78,16 @@ int main() {
                 if(result == 1) {
                     printf("There is no solution.\n");
                 } else if (result == 2) {
-                    root1 = -(float)c/b;
                     printf("Root: %.2f\n", root1);
                 } else if (result == 3) {
                     printf("There are no real roots.\n");
-                } else {
-                    root1 = (-b + sqrt((b * b) - (4 * a * c))) / (2 * a);
-                    root2 = (-b - sqrt((b * b) - (4 * a * c))) / (2 * a);
+                } else if (result == 4) {
                     printf("The roots are: %.2f and %.2f\n", root1, root2);
                 }
                 break;
             }
             case 4: {
+                printf("Exiting...");
                 return 0; //exit
             }
             default: {
@@ -160,7 +158,7 @@ int factorialSolver(int num) {
 */
 int quadraticSolver(int a, int b, int c) {
     int discriminant;
-    int root1, root2;
+    int returnFlag;
 
     //1 - There is no solution
     //2 - root1 -c/b
@@ -168,15 +166,21 @@ int quadraticSolver(int a, int b, int c) {
     //4 - root1 and root2
 
     if(a == 0 && b == 0) {
-        return 1;
+        returnFlag = 1;
+
     } else if (a == 0) {
-        return 2;
+        root1 = -(float)c/b;
+        returnFlag = 2;
     } else {
         discriminant = (b*b) - (4*a*c);
         if (discriminant < 0) {
-            return 3;
+            returnFlag = 3;
         } else {
-            return 4;
+            returnFlag = 4;
+            root1 = (-b + sqrt(discriminant)) / (2*a);
+            root2 = (-b - sqrt(discriminant)) / (2*a);
         }
     }
+
+    return returnFlag;
 }
