@@ -46,10 +46,33 @@ int main() {
         switch(choice) {
             case 1: {
                 int base, power, result;
-                printf("Enter base: ");
-                scanf("%d", &base);
-                printf("Enter power: ");
-                scanf("%d", &power);
+                
+                do {
+                    printf("Enter base: ");
+                    
+                    if(scanf("%d", &base) != 1) {
+                        printf("Invalid input. Please enter an integer.\n");
+                        while(getchar() != '\n');
+                        continue;
+                    } else {
+                        break;
+                    }
+                } while(1);
+
+                do {
+                    printf("Enter power: ");
+                    
+                    if(scanf("%d", &power) != 1) {
+                        printf("Invalid input. Please enter an integer.\n");
+                        while(getchar() != '\n');
+                        continue;
+                    } else if (power < 0) {
+                        printf("Power must be a positive integer.\n");
+                        continue;
+                    } else {
+                        break;
+                    }
+                } while (1);
 
                 result = powerSolver(base, power);
                 printf("The reuslt is: %d\n", result);
@@ -57,8 +80,19 @@ int main() {
             }
             case 2: {
                 int num, result;
-                printf("Enter a number: ");
-                scanf("%d", &num);
+                
+                do {
+                    printf("Enter a number: ");
+
+                    if(scanf("%d", &num) != 1) {
+                        printf("Invalid input. Must be an integer.\n");
+                        while(getchar() != '\n');
+                        continue;
+                    } else {
+                        break;
+                    }
+                } while (1);
+
                 result = factorialSolver(num);
                 printf("The factorial of %d is: %d\n", num, result);
                 break;
@@ -67,12 +101,41 @@ int main() {
                 int a, b, c;
                 int result;
 
-                printf("Enter a: ");
-                scanf("%d", &a);
-                printf("Enter b: ");
-                scanf("%d", &b);
-                printf("Enter c: ");
-                scanf("%d", &c);
+                do {
+                    printf("Enter a: ");
+                    
+                    if(scanf("%d", &a) != 1) {
+                        printf("Invalid input. Must be an integer.\n");
+                        while(getchar() != '\n');
+                        continue;
+                    } else {
+                        break;
+                    }
+                } while(1);
+
+                do {
+                    printf("Enter b: ");
+
+                    if(scanf("%d", &b) != 1) {
+                        printf("Invalid input. Must be an integer.\n");
+                        while(getchar() != '\n');
+                        continue;
+                    } else {
+                        break;
+                    }
+                } while(1);
+
+                do {
+                    printf("Enter c: ");
+
+                    if(scanf("%d", &c) != 1) {
+                        printf("Invalid input. Must be an integer.\n");
+                        while(getchar() != '\n');
+                        continue;
+                    } else {
+                        break;
+                    }
+                } while(1);
 
                 result = quadraticSolver(a, b, c);
                 if(result == 1) {
@@ -127,7 +190,9 @@ void displayMenu() {
 ===========================================================================
 */
 int powerSolver(int base, int p) {
-    return pow(base, p);
+    int result;
+    result = pow(base, p);
+    return result;
 }
 
 /*
@@ -158,7 +223,7 @@ int factorialSolver(int num) {
 */
 int quadraticSolver(int a, int b, int c) {
     int discriminant;
-    int returnFlag;
+    int returnFlag = 0;
 
     //1 - There is no solution
     //2 - root1 -c/b
