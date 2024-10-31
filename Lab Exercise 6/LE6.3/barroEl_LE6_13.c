@@ -64,6 +64,7 @@ int main() {
             }
             case 3: {
                 int a, b, c;
+                float root1, root2;
                 int result;
 
                 printf("Enter a: ");
@@ -77,7 +78,14 @@ int main() {
                 if(result == 1) {
                     printf("There is no solution.\n");
                 } else if (result == 2) {
+                    root1 = -(float)c/b;
+                    printf("Root: %.2f\n", root1);
+                } else if (result == 3) {
                     printf("There are no real roots.\n");
+                } else {
+                    root1 = (-b + sqrt((b * b) - (4 * a * c))) / (2 * a);
+                    root2 = (-b - sqrt((b * b) - (4 * a * c))) / (2 * a);
+                    printf("The roots are: %.2f and %.2f\n", root1, root2);
                 }
                 break;
             }
@@ -154,21 +162,21 @@ int quadraticSolver(int a, int b, int c) {
     int discriminant;
     int root1, root2;
 
+    //1 - There is no solution
+    //2 - root1 -c/b
+    //3 - There are no real roots
+    //4 - root1 and root2
+
     if(a == 0 && b == 0) {
         return 1;
     } else if (a == 0) {
-        root1 = -c/b;
-        printf("The only root is: %d\n", root1);
-        return 0;
+        return 2;
     } else {
         discriminant = (b*b) - (4*a*c);
         if (discriminant < 0) {
-            return 2;
+            return 3;
         } else {
-            root1 = (-b + sqrt(discriminant))/(2*a);
-            root2 = (-b - sqrt(discriminant))/(2*a);
-            printf("The two roots are %d and %d\n", root1, root2);
-            return 0;
+            return 4;
         }
     }
 }
