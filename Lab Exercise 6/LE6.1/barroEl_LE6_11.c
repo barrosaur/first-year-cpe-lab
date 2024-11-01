@@ -58,8 +58,7 @@ int main() {
 ===========================================================================
 */
 int extractFirstLSD(int num) {
-    int firstLastInteger = 0;
-    firstLastInteger = num % 10;
+    int firstLastInteger =  num % 10;
     return firstLastInteger;
     // return num % 10;
 }
@@ -74,8 +73,7 @@ int extractFirstLSD(int num) {
 */
 
 int extractSecondLSD(int num) {
-    int secondLastInteger = 0;
-    secondLastInteger = ((num % 100) - (num % 10)) / 10;
+    int secondLastInteger = ((num % 100) - (num % 10)) / 10;
     return secondLastInteger;
     
     // return ((num % 100) - (num % 10)) / 10;
@@ -91,8 +89,7 @@ int extractSecondLSD(int num) {
 ===========================================================================
 */
 int sumDigits (int x, int y) {
-    int sum = 0;
-    sum = x + y;
+    int sum =  x + y;
     return sum;
     //return x + y;
 }
