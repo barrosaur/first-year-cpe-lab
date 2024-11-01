@@ -59,7 +59,15 @@ int main() {
 */
 
 bool isLetter(char ch) {
-    return ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'));
+    bool flag;
+    if ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
+        flag = true;
+    } else {
+        flag = false;
+    }
+    return flag;
+
+    //return((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'));
 }
 
 /*
@@ -71,5 +79,15 @@ bool isLetter(char ch) {
 ===========================================================================
 */
 bool isVowel(char ch) {
-    return (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O' || ch == 'u' || ch == 'U');
+    bool isAVowel = (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O' || ch == 'u' || ch == 'U');
+    bool flag;
+
+    if(isAVowel) {
+        flag = true;
+    } else {
+        flag = false;
+    }
+
+    return flag;
+    //return (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O' || ch == 'u' || ch == 'U');
 }
