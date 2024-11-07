@@ -26,10 +26,21 @@ int findSmallestNum(int nums[]);
 int main() {
     int nums[10];
     int i, largestNum = 0, smallestNum = 0;
+    int validInput;
 
     for(i = 0; i < 10; i++) {
-        printf("Enter number %d: ", i + 1);
-        scanf("%d", &nums[i]);
+        // printf("Enter number %d: ", i + 1);
+        // scanf("%d", &nums[i]);
+
+        do {
+            printf("Enter number %d: ", i + 1);
+            validInput = scanf("%d", &nums[i]);
+
+            if(validInput != 1) {
+                printf("Enter an integer.\n");
+                while(getchar() != '\n');
+            }
+        } while(validInput != 1);
     }
 
     printf("\n================================================================\n");
@@ -52,7 +63,6 @@ int main() {
  RETURNS     : void
 ===========================================================================
 */
-
 void displayNumbersEntered(int nums[]) {
     int i;
     printf("Numbers entered         : ");
@@ -64,6 +74,15 @@ void displayNumbersEntered(int nums[]) {
 
     return;
 }
+
+/*
+============================================================================
+ FUNCTION    : findLargestNum
+ DESCRIPTION : Finds the largest 
+ ARGUMENTS   : void
+ RETURNS     : int - Successful Program Execution
+===========================================================================
+*/
 
 int findLargestNum(int nums[]) {
     int i;
