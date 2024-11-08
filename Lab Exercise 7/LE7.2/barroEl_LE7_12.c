@@ -2,47 +2,46 @@
 #include <string.h>
 #include <stdbool.h>
 
-int main() {
-    char str[50];
-    int vowelCount = 0, consonantCount = 0;
-    int i, j, strLength;
-    char vowels[50] = "", consonants[50] = "";
-    char vowelList[10] = {'a', 'A', 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U'};
+int checkCharacter(char ch);
 
+int main() {
+    char str[100];
+    int i, length, result;
+    int vowelCount = 0, consonantCount = 0;
+    
     printf("Enter a string: ");
     gets(str);
 
-    strLength = strlen(str);
+    length = strlen(str);
 
-    for(i = 0; i < strLength; i++) {
-        char ch = str[i];
-        bool isVowel = false;
+    for(i = 0; i < length; i++) {
+        result = checkCharacter(str[i]);
 
-        for(j = 0; j < 10; j++) {
-            if(ch == vowelList[j]) {
-                isVowel = true;
-                break;  
-            }
-        }
-
-        if((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z')) {
-            if (isVowel) {
-                vowels[vowelCount++] = ch;
-            } else {
-                vowels[consonantCount++] = ch;
-            }
+        if(result == 1) {
+            vowelCount++;
+        } else if (result == 2) {
+            consonantCount++;
         }
     }
 
-    vowels[vowelCount++] = '\0';
-    consonants[consonantCount++] = '\0';
-
-    printf("\n=================================================================\n");
-
-    printf("Vowels                  : %s\n", vowels);
-    printf("Number of vowels        : %d\n", vowelCount);
-    printf("Consonants              : %s\n", consonants);
-    printf("Number of consonants    : %d\n", consonantCount);
+    printf("Vowel count: %d\n", vowelCount);
+    printf("Consonant count: %d\n", consonantCount);
 
     return 0;
+}
+
+int checkCharacter(char ch) {
+    int flag;
+    bool isVowel = (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O' || ch == 'u' || ch == 'U');
+    bool isLetter = ((ch >= 'a' && ch <= 'z') || (ch >= 'A' && ch <= 'Z'));
+
+    if(isVowel) {
+        flag = 1;
+    } else if (isLetter) {
+        flag = 2;
+    } else {
+        flag = 0;
+    }
+
+    return flag;
 }

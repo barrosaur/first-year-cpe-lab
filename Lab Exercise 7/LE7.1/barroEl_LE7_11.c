@@ -29,9 +29,6 @@ int main() {
     int validInput;
 
     for(i = 0; i < 10; i++) {
-        // printf("Enter number %d: ", i + 1);
-        // scanf("%d", &nums[i]);
-
         do {
             printf("Enter number %d: ", i + 1);
             validInput = scanf("%d", &nums[i]);
