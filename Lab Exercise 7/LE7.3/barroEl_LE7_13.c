@@ -25,11 +25,11 @@ int checkAndUpdateLongest(char currentStr[], char longestStr[], int maxLength);
 int main() {
     char string[5][100];
     char longestStr[100] = "";
-    int maxLength = 0;
+    int maxLength = 0, i;
 
     printf("Enter 5 strings.\n");
 
-    for(int i = 0; i < 5; i++) {
+    for(i = 0; i < 5; i++) {
         printf("Enter String %d: ", i+1);
         gets(string[i]);
 
