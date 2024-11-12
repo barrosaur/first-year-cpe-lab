@@ -27,6 +27,7 @@ int main() {
     int nums[10];
     int i, largestNum = 0, smallestNum = 0;
     int validInput;
+    char ch;
 
     for(i = 0; i < 10; i++) {
         do {
@@ -35,9 +36,19 @@ int main() {
 
             if(validInput != 1) {
                 printf("Enter an integer.\n");
-                while(getchar() != '\n');
+                while((ch = getchar()) != '\n' && ch != EOF);
+            } else {
+                if((ch = getchar()) != '\n') {
+                    printf("Enter an integer.\n");
+                    while(ch != '\n' && ch != EOF) {
+                        ch = getchar();
+                    }
+                    validInput = 0;
+                }
             }
+
         } while(validInput != 1);
+
     }
 
     printf("\n================================================================\n");
