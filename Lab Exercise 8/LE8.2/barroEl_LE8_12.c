@@ -89,7 +89,7 @@ int main() {
 int searchElement(int *arr, int size, int numSearch) {
     int i;
     for(i = 0; i < size; i++) {
-        if(*(arr + i) == numSearch) {
+        if(arr[i] == numSearch) {
             return i; //return index if found
         } 
     }
