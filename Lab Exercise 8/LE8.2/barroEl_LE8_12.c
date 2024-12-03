@@ -10,10 +10,8 @@
 ============================================================================
 */
 #include <stdio.h>
-
 int searchElement(int *arr, int size, int numSearch);
 void clearInputBuffer(int input);
-
 /*
 ============================================================================
  FUNCTION    : main
@@ -26,7 +24,6 @@ int main() {
     int numOfEntries, searchNum, result;
     int i;
     char c;
-
     while (1) {
         printf("Enter number of entries: ");
         if((scanf("%d%c", &numOfEntries, &c)) == 2 && c == '\n') {
@@ -36,9 +33,7 @@ int main() {
             clearInputBuffer(numOfEntries);
         }
     }
-
     int arr[numOfEntries];
-
     for(i = 0; i < numOfEntries; i++) {
         while(1) {
             printf("Enter number %d: ", i + 1);
@@ -51,9 +46,7 @@ int main() {
             }
         }
     }
-
     printf("\n");
-
     while(1) {
         printf("Search data: ");
         if((scanf("%d%c", &searchNum, &c)) == 2 && c == '\n') {
@@ -64,18 +57,14 @@ int main() {
             printf("\n");
         }
     }
-
     result = searchElement(arr, numOfEntries, searchNum);
-
     if(result == -1) {
         printf("NOT FOUND\n");
     } else {
         printf("FOUND in Index %d\n", result);
     }
-
     return 0;
 }
-
 /*
 ============================================================================
  FUNCTION    : searchElement
@@ -89,13 +78,12 @@ int main() {
 int searchElement(int *arr, int size, int numSearch) {
     int i;
     for(i = 0; i < size; i++) {
-        if(arr[i] == numSearch) {
+        if(*(arr + i) == numSearch) {
             return i; //return index if found
         } 
     }
     return -1; //not found
 }
-
 void clearInputBuffer(int input) {
     while((input = getchar()) != '\n');
 }
