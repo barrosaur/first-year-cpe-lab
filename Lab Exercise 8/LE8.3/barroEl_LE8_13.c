@@ -70,15 +70,14 @@ int main() {
 ===========================================================================
 */
 int findMaxNum(int *arr, int n) {
-    int max = *arr; //max is initialized to the first element
+    int max = arr[0]; // Initialize max to the first element
     int i;
 
-    for(i = 1; i < n; i++) {
-        if(*(arr + i) > max) {
-            max = *(arr + i);
+    for (i = 1; i < n; i++) {
+        if (arr[i] > max) { // Direct array indexing
+            max = arr[i];
         }
     }
-
     return max;
 }
 
