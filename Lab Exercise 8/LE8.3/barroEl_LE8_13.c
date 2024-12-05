@@ -10,10 +10,8 @@
 ============================================================================
 */
 #include <stdio.h>
-
 void clearInputBuffer(int input);
 int findMaxNum(int *arr, int n);
-
 /*
 ============================================================================
  FUNCTION    : main
@@ -26,7 +24,6 @@ int main() {
     int numOfEntries, result;
     int i;
     char c;
-
     while(1) {
         printf("Enter number of entries: ");
         if((scanf("%d%c", &numOfEntries, &c)) == 2 && c == '\n') {
@@ -37,9 +34,7 @@ int main() {
             printf("\n");
         }
     }
-
     int arr[numOfEntries];
-
     for(i = 0; i < numOfEntries; i++) {
         while(1) {
             printf("Enter number %d: ", i+1);
@@ -52,14 +47,11 @@ int main() {
             }
         }
     }
-
     result = findMaxNum(arr, numOfEntries);
     printf("\n");
     printf("Maximum Number: %d", result);
-
     return 0;
 }
-
 /*
 ============================================================================
  FUNCTION    : findMaxNum
@@ -70,17 +62,15 @@ int main() {
 ===========================================================================
 */
 int findMaxNum(int *arr, int n) {
-    int max = arr[0]; // Initialize max to the first element
+    int max = *arr; //max is initialized to the first element
     int i;
-
-    for (i = 1; i < n; i++) {
-        if (arr[i] > max) { // Direct array indexing
-            max = arr[i];
+    for(i = 1; i < n; i++) {
+        if(*(arr + i) > max) {
+            max = *(arr + i);
         }
     }
     return max;
 }
-
 void clearInputBuffer(int input) {
     while((input = getchar()) != '\n');
 }
