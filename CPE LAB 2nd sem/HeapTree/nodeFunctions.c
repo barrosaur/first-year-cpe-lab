@@ -65,7 +65,7 @@ NODE *insertMinHeap(NODE *root, int value, bool *stepMode) {
             while (child != root && child->value < current->value) {
                 if (*stepMode) {
                     displayTree(root);
-                    printf("Heapifying %d in Min Heap, press SPACE BAR to continue...\n", child->value);
+                    printf("Heapifying %d in Min Heap, press SPACE BAR to continue...\n\n", child->value);
                     waitForSpaceBar("");
                 }
                 
@@ -110,7 +110,7 @@ NODE *insertMinHeap(NODE *root, int value, bool *stepMode) {
                 // Display step if in step mode
                 if (*stepMode) {
                     displayTree(root);
-                    printf("Heapifying %d in Min Heap, press SPACE BAR to continue...\n", child->value);
+                    printf("Heapifying %d in Min Heap, press SPACE BAR to continue...\n\n", child->value);
                     waitForSpaceBar("");
                 }
                 
@@ -155,7 +155,7 @@ NODE *insertMinHeap(NODE *root, int value, bool *stepMode) {
     }
     
     // This should not happen for a properly maintained heap
-    printf("Error: Could not find insertion point in the heap.\n");
+    printf("Error: Could not find insertion point in the heap.\n\n");
     return root;
 }
 
@@ -183,7 +183,7 @@ NODE *insertMaxHeap(NODE *root, int value, bool *stepMode) {
                 // Display step if in step mode
                 if (*stepMode) {
                     displayTree(root);
-                    printf("Heapifying %d in Max Heap, press SPACE BAR to continue...\n", child->value);
+                    printf("Heapifying %d in Max Heap, press SPACE BAR to continue...\n\n", child->value);
                     waitForSpaceBar("");
                 }
                 
@@ -231,7 +231,7 @@ NODE *insertMaxHeap(NODE *root, int value, bool *stepMode) {
                 // Display step if in step mode
                 if (*stepMode) {
                     displayTree(root);
-                    printf("Heapifying %d in Max Heap, press SPACE BAR to continue...\n", child->value);
+                    printf("Heapifying %d in Max Heap, press SPACE BAR to continue...\n\n", child->value);
                     waitForSpaceBar("");
                 }
                 
@@ -276,7 +276,7 @@ NODE *insertMaxHeap(NODE *root, int value, bool *stepMode) {
     }
     
     // This should not happen for a properly maintained heap
-    printf("Error: Could not find insertion point in the heap.\n");
+    printf("Error: Could not find insertion point in the heap.\n\n");
     return root;
 }
 

@@ -259,7 +259,6 @@ void inputHandle(int arr[], int arrSize, NODE **minRoot, NODE **maxRoot) {
 
             printf("SUCCESS: node added!\n");
             printf("Press any key to continue...\n");
-            //getch();
         }
     }
 }

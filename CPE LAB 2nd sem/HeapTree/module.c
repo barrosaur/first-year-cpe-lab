@@ -42,26 +42,38 @@ void deleteNodeModule(NODE **minRoot, NODE **maxRoot) {
     bool stepMode = true;
 
     printf("=== DELETE NODE ===\n");
-
+    
+    // Display current heaps
     displayBothHeaps(*minRoot, *maxRoot);
-
-    if (*minRoot == NULL || *maxRoot == NULL) {
-        printf("ERROR: One or both heaps are empty!\n");
+    
+    if (*minRoot == NULL && *maxRoot == NULL) {
+        printf("ERROR: Both heaps are empty!\n");
         printf("Press any key to return to MAIN MENU...\n");
         getch();
         return;
     }
-
-    printf("Deleting root nodes from both heaps...\n");
-    printf("Min Heap root: %d, Max Heap root: %d\n", (*minRoot)->value, (*maxRoot)->value);
-
-    *minRoot = deleteMinHeap(*minRoot, &stepMode);
-
-    *maxRoot = deleteMaxHeap(*maxRoot, &stepMode);
-
+    
+    printf("Deleting root nodes...\n");
+    
+    // Check and delete from min heap
+    if (*minRoot != NULL) {
+        printf("Min Heap root: %d\n", (*minRoot)->value);
+        *minRoot = deleteMinHeap(*minRoot, &stepMode);
+    } else {
+        printf("Min Heap is empty, nothing to delete.\n");
+    }
+    
+    // Check and delete from max heap
+    if (*maxRoot != NULL) {
+        printf("Max Heap root: %d\n", (*maxRoot)->value);
+        *maxRoot = deleteMaxHeap(*maxRoot, &stepMode);
+    } else {
+        printf("Max Heap is empty, nothing to delete.\n");
+    }
+    
+    // Display both heaps after deletion
     displayBothHeaps(*minRoot, *maxRoot);
-
-    printf("SUCCESS: nodes removed!\n");
+    
     printf("Press any key to return to MAIN MENU...\n");
     getch();
 
