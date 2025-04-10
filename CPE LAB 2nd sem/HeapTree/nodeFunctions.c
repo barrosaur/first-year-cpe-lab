@@ -17,17 +17,14 @@ NODE *createNode(int value) {
 NODE *findParent(NODE *root, int height, int nodeCount) {
     if (root == NULL || height <= 1) return root;
     
-    // For a complete binary tree, the parent of node at index i is at index (i-1)/2
     int parentIndex = (nodeCount - 1) / 2;
-    int currentIndex = 1; // Start at root (index 1 in 1-based indexing)
+    int currentIndex = 1; 
     NODE *current = root;
     
-    // Use a queue for level-order traversal
     NODE *queue[1000];
     int front = 0, rear = 0;
     queue[rear++] = root;
     
-    // BFS to find the parent node
     while (front < rear) {
         NODE *node = queue[front++];
         currentIndex++;
@@ -40,7 +37,7 @@ NODE *findParent(NODE *root, int height, int nodeCount) {
         if (node->right) queue[rear++] = node->right;
     }
     
-    return root; // Fallback
+    return root; 
 }
 
 int countNodes(NODE *root) {
@@ -49,12 +46,10 @@ int countNodes(NODE *root) {
 }
 
 NODE *insertMinHeap(NODE *root, int value, bool *stepMode) {
-    // If tree is empty, create root
     if (root == NULL) {
         return createNode(value);
     }
     
-    // Use level-order traversal to find the first empty spot
     NODE *queue[1000];
     int front = 0, rear = 0;
     queue[rear++] = root;
@@ -62,29 +57,24 @@ NODE *insertMinHeap(NODE *root, int value, bool *stepMode) {
     while (front < rear) {
         NODE *current = queue[front++];
         
-        // If left child is empty, insert here
         if (!current->left) {
             current->left = createNode(value);
             
-            // Heapify up
+            // heapify up
             NODE *child = current->left;
             while (child != root && child->value < current->value) {
-                // Display step if in step mode
                 if (*stepMode) {
                     displayTree(root);
                     printf("Heapifying %d in Min Heap, press SPACE BAR to continue...\n", child->value);
                     waitForSpaceBar("");
                 }
                 
-                // Swap values
                 int temp = child->value;
                 child->value = current->value;
                 current->value = temp;
                 
-                // Find the parent of current node to continue heapify up
                 child = current;
                 
-                // Find parent through tree traversal
                 NODE *parent = NULL;
                 NODE *traversal = root;
                 NODE *queue2[1000];
